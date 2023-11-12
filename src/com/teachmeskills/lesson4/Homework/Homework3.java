@@ -1,4 +1,4 @@
-package com.teachmeskills.lesson4.HW;
+package com.teachmeskills.lesson4.Homework;
 /*
 Создайте 2 массива из 5 чисел.
 Выведите массивы на консоль в двух отдельных строках.
