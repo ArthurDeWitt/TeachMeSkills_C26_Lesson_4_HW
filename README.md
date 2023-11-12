@@ -32,4 +32,4 @@ Create an array of strings.
 Fill it with arbitrary names of people.
 Sort the array and output the result to the console.
 # AdditionalTask3
-Implementation of the bubble sorting algorithm
+Implementation of the bubble sorting algorithm.
