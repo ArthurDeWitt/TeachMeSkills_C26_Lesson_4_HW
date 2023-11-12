@@ -1,8 +1,9 @@
 package com.teachmeskills.lesson4.HW;
 
 import java.util.Scanner;
+import java.util.Arrays;
 /*
-2. Создайте и заполните массив случайным числами и выведете
+Создайте и заполните массив случайным числами и выведете
 максимальное, минимальное и среднее значение.
 Для генерации случайного числа используйте метод Math.random().
 Пусть будет возможность создавать массив произвольного размера.
@@ -27,8 +28,8 @@ public class Homework2 {
 
         // Заполняем массив случайными числами
         for (int i = 0; i < array.length; i++) {
-            // Генерация случайных чисел в пределах типа int (от -2147483647 до 2147483647)
-            array[i] = (int) ((Math.random() * 2 * 2147483647) - 2147483647);
+            // Генерация случайных чисел в пределах от -100 до 100
+            array[i] = (int) ((Math.random() *200) - 100);
         }
 
         // Выводим массив
@@ -51,11 +52,31 @@ public class Homework2 {
             }
             sum += array[i];
         }
+        // Находим среднее арифметическое число массива
         double average = (double) sum / array.length;
 
-        // Выводим максимальное, минимальное и среднее значение
+        // Создаем копию исходного массива для сортировки
+        int[] sortedArray = Arrays.copyOf(array, array.length);
+        // Сортируем массив
+        Arrays.sort(sortedArray); // Сортируем массив
+
+        // Инициализируем переменные для хранения значения, максимально приближенного к среднему арифметическому
+        int closestToAverage = sortedArray[0];
+        double minDifference = Math.abs(sortedArray[0] - average);
+
+        // Проходим по отсортированному массиву и находим значение, наименее отличающееся от среднего значения
+        for (int i = 1; i < sortedArray.length; i++) {
+            double difference = Math.abs(sortedArray[i] - average);
+            if (difference < minDifference) {
+                minDifference = difference;
+                closestToAverage = sortedArray[i];
+            }
+        }
+
+        // Выводим максимальное, минимальное, среднее значение и значение элемента максимально приближённое к среднему
         System.out.println("Maximum value is: " + max);
         System.out.println("Minimum value is: " + min);
         System.out.println("Average value is: " + average);
+        System.out.println("Value closest to the average: " + closestToAverage);
     }
 }
