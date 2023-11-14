@@ -19,30 +19,27 @@ public class Homework3 {
         double sumFirstArray = 0;
         double sumSecondArray = 0;
 
-        // Расчёт среднеарифметического элементов первого массива
-        for (int i = 0; i < firstArray.length; i++) {
-            sumFirstArray += firstArray[i];
+            // Расчёт среднеарифметического элементов первого массива
+            for (int i = 0; i < firstArray.length; i++) {
+                sumFirstArray += firstArray[i];
+            }
             double averageFirstArray = sumFirstArray / firstArray.length;
             System.out.println("Average value of the first array is: " + averageFirstArray);
 
             // Расчёт среднеарифметического элементов второго массива
             for (int j = 0; j < secondArray.length; j++) {
-                sumSecondArray += secondArray[i];
-                double averageSecondArray = sumSecondArray / secondArray.length;
-                System.out.println("Average value of the second array is " + averageSecondArray);
+                sumSecondArray += secondArray[j];
+            }
+            double averageSecondArray = sumSecondArray / secondArray.length;
+            System.out.println("Average value of the second array is " + averageSecondArray);
 
-                // Сверяем полученные результаты
-                if (averageFirstArray > averageSecondArray) {
-                    System.out.println("Average value of the first array GREATER than that of the second array");
-                    return;
-                } else if (averageFirstArray < averageSecondArray) {
-                    System.out.println("Average value of the first array is LESS than that of the second array");
-                    return;
-                } else {
-                    System.out.println("Average value first array is EQUAL to average values of the second array ");
-                    return;
-                }
+            // Сверяем полученные результаты
+            if (averageFirstArray > averageSecondArray) {
+                System.out.println("Average value of the first array is GREATER than that of the second array");
+            } else if (averageFirstArray < averageSecondArray) {
+                System.out.println("Average value of the first array is LESS than that of the second array");
+            } else {
+                System.out.println("Average value of the first array is EQUAL to the average value of the second array");
             }
         }
     }
-}
